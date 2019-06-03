@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    html
+    {
+        background: url(./backgrounds/login.jpg);
+        background-size: 100%;
+        background-attachment: fixed;
+        font-family: tahoma;
+    }
+  </style>
+  <title> Login </title>
+</head>
+<body>
+
+<form action="after_login.py" method="POST">
+
+<table style="background-color:white;opacity:.8;padding-left:20px;padding-right:20px;padding-bottom:20px;" align="center">
+  <tr><td style="color:black">
+  <h1> Student Login </h1> 
+  Name: <select name="studentName" size="1">
+         student_options
+       </select> <br><br>
+  Password: <input type="password" name="studentPassword"> <br><br>
+  <div style="text-align:center"><input type="submit" name="student" value="Student Login"></div>
+  </td></tr>
+</table> <br>
+
+<table style="background-color:white;opacity:.8;padding-left:20px;padding-right:20px;padding-bottom:20px;" align="center">
+  <tr><td style="color:black">
+  <h1> Teacher Login </h1>
+  Logging in as Mr. Teacher... <br><br>
+  Password: <input type="password" name="teacherPassword"> <br><br>
+  Action: <select name="teacherName" size="1">
+         teacher_options
+       </select> <br><br>
+  <div style="text-align:center"><input type="submit" name="teacher" value="Teacher Login"></div>
+  </td></tr>
+</table> <br> <br>
+
+<div style="text-align:center"> <a href="documentation.html" style="text-decorations:none; color:inherit;">Project Documentation</a> </div>
+
+</form>
+
+</body>
+</html>

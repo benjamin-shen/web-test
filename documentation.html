@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- template from http://homer.stuy.edu/~dholmes/project/documentationTemplate.html -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>IntroCS2 Term Project - Albert Ryu and Benjamin Shen</title>
+</head>
+
+<body>
+
+<h1> Description </h1>
+<p> Our website allows a teacher to administer tests online. <br>
+Students are able to take the tests and view their scores (questions are shown individually, allowing the student to leave a test incomplete). <br>
+The teacher is able to view everyone's scores (and statistics) and manage the class (by registering new students and creating new tests). </p>
+<p> Recommended order of testing (no pun intended):
+<ol>
+  <li> Read rest of documentation </li>
+  <li> Glimpse at names in Student Login </li>
+  <li> Login as a teacher using the password 0 and action "View Scores" </li>
+  <li> Admire the statistics table </li>
+  <li> Choose the action "Register a Student" </li>
+  <li> Register a unique person that's not already on the students list </li>
+  <li> Login in as that student (or another student - Test Students' passwords are 0) and take the sample test </li>
+  <li> Try to cheat by refreshing the page, pressing the back key, or logging out and in again </li>
+  <li> Keep track of your score and confirm it at the congrats page </li>
+  <li> Log in as a teacher to view your score and confirm it, and experiment with the reset button </li>
+  <li> Add a short test that doesn't already exist and take it </li>
+  <li> Repeat any part of this list and try to break the program </li>
+</ol> </p>
+
+<h1> Personnel </h1>
+<p> <a href="http://homer.stuy.edu/~albert.ryu/project">Albert Ryu</a> period 2 <br>
+    <a href="http://homer.stuy.edu/~benjamin.shen/project">Benjamin Shen</a> period 10 </p>
+<p> Albert managed the timesheet; Benjamin managed the documentation. Both partners have spent nearly equal amounts of time on the other parts of the project (by physically working together). </p>
+
+<h1> Citations</h1>
+<p> <ul>
+      <li> <a href="http://pythontutor.com/visualize.html">Python Tutor</a> </li>
+      <li> <a href="http://htmledit.squarefree.com/">HTML editor</a> </li>
+    </ul> </p>
+<h2> people </h2>
+<p> <ul>
+      <li> George Zheng's <a href="https://piazza.com/class/ikocha0yj934pj?cid=503">piazza post</a> about security </li>
+      <li> Adeebur Rahman's <a href="https://piazza.com/class/ikocha0yj934pj?cid=561">piazza post</a> about hidden form inputs </li>
+      <li> Rochelle Vayntrub's and Perry Wang's usage of the required attribute in their project </li>
+      <li> Discussion with: Noah Tang, Andrew Lee </li>
+      <li> Outside testers (<b>bolded</b> attend Stuyvesant): Brandon Ng, <b>Chloe Lee</b>, Enya Ryu, <b>Jason Wang</b>, <b>Kevin Chen</b>, <b>Kevin Li</b>, <b>Mahesh Saha</b>, Samuel Kim, Victor Li, <b>Yedoh Kang</b> </li> 
+    </ul> </p>
+<h2> programming </h2>
+<p> <ul>
+      <li> <a href="http://www.w3schools.com/tags/att_font_face.asp">font attribute</a> </li>
+      <li> <a href="http://www.w3schools.com/css/css_align.asp">css align</a> </li>
+      <li> <a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">css background</a> </li>
+      <li> <a href="http://www.w3schools.com/cssref/pr_background-repeat.asp">background repeat</a> </li>
+      <li> <a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">css opacity</a> </li>
+      <li> <a href="http://stackoverflow.com/questions/5411538/redirect-from-an-html-page">redirect from html to python</a> (Preetom Banerjee's answer), <a href="http://homer.stuy.edu/~dholmes/re-direct.html">as used by Mr. Holmes</a> </li>
+      <li> <a href="http://stackoverflow.com/questions/28610508/how-to-get-raw-html-text-of-a-given-url-using-python">urllib</a> (CrazyPython's answer) </li>
+      <li> <a href="http://stackoverflow.com/questions/6722467/how-to-remove-the-default-link-color-of-the-html-hyperlink-a-tag">black hyperlink</a> (Dan Bradbury's response) </li>
+      <li> <a href="http://www.w3schools.com/tags/att_input_type.asp">number input type</a> </li>
+    </ul> </p>
+<h2> data sources </h2>
+<p> <ul>
+      <li> <a href="http://www.nysedregents.org/Chemistry/116/chem12016-exam.pdf">chem questions</a> </li>
+      <li> <a href="http://www.regentsprep.org/regents/math/algebra/aop2/orderPrac.htm">math questions</a> </li>
+      <li> <a href="http://www.mytestbook.com/worksheet.aspx?test_id=1368&grade=7&subject=Math&topics=Algebra%20Solving%20Equations">math questions</a> </li>
+    </ul> </p>
+
+<h1> Desirable features, with time estimates </h1>
+<p> <ul>
+      <li> assign random password for every time a teacher registers a student (est 0.5 hours) </li>
+      <li> student ability to change password (est 0.6 hours) </li>
+      <li> teacher ability to change password (est 0.4 hours) </li>
+      <li> teacher option to remove students (est 1.0 hours) </li>
+      <li> teacher option to remove tests [<a href="http://stackoverflow.com/questions/6996603/how-do-i-delete-a-file-or-folder-in-python">potential source</a>] (est 1.0 hours) </li>
+    </ul> estimated time of desirable features: 3.5 hours</p>
+
+<h1 id="achievements"> Achievements </h1>
+<p> <ul>
+      <li> multi-login page for student or teacher </li>
+      <li> sample accounts and sample tests </li>
+      <li> student kept logged in through different pages </li>
+      <li> interface to cycle through test questions from a csv file </li>
+      <li> student option to resume incomplete tests </li>
+      <li> completion page to signal the termination of a test </li>
+      <li> teacher summary of grades </li>
+      <li> teacher option to reset individuals' data </li>
+      <li> teacher statistics of grades </li>
+      <li> teacher ability to register a new student </li>
+      <li> teacher ability to write a new test </li>
+    </ul> </p>
+<h2 id="features"> Features of note </h2>
+<p> <ul>
+      <li> we included self-taught CSS formatting </li>
+      <li> hidden data is sent throughout the programs </li>
+      <li> there are pages that redirect to themselves and respond accordingly </li>
+      <li> most pages are partially dynamic
+        <ul>
+          <li> login.py's select options (reading from accounts.csv) </li>
+          <li> after_login.py's test listing (reading from inside tests folder) </li>
+          <li> administerTest.py's questions and score at congratulations page (reading from inside tests and students folders) </li>
+          <li> teacherStats.py's details (reading from inside students folder) </li>
+          <li> createTest.py's form length </li>
+        </ul> </li>
+      <li> we were able to determine if the tests had ended (seen in the congratulations/statistics pages) </li>
+      <li> we wrote our own statistics module </li>
+      <li> refreshing the page, pressing the back key, and logging out/in don't break the program </li>
+    </ul>
+</p>
+
+<h2 id="learning"> Learning </h2>
+<p> <ul>
+      <li> CSS to beautify pages, learned throughout the project (cummulatively ~1.5 hours) </li>
+      <li> linking pages through input type="hidden" </li>
+      <li> built-in module urllib to retrieve html code </li>
+    </ul> </p>
+
+<h1> Next Steps, with time estimates </h1>
+<p> Stop working at: 2016-06-12 20:00 <ol>
+      <li> create a button in the test-administering page giving the option to take another test (est 0.4 hours) </li>
+      <li> make it possible for teachers to choose another action while logged in (est 0.5 hours) </li>
+      <li> add undo option to resetting student data (est 0.8 hours) </li>
+      <li> fool-proof the random query strings so that there's no error (est 0.4 hours) </li>
+      <li> produce random password when a teacher registers a student (est 0.5 hours) </li>
+      <li> allow students to change their passwords (est 0.6 hours) </li>
+      <li> ... </li>
+    </ol> </p>
+
+<h1> Finished Steps, identified by worker </h1>
+<p> <ol>
+      <li> login.html template for login.py (both) </li>
+      <li> accounts.csv test file (Albert) </li>
+      <li> login.py login page (both) </li>
+      <li> fixed bug in csvToDict module (both) </li>
+      <li> after_login.py for student login (both) </li>
+      <li> hide accounts.csv for security reasons (Benjamin) </li>
+      <li> alphabetize names in login.py (both) </li>
+      <li> modify login.py by fixing flaw in teacher login design (both) </li>
+      <li> teacher.csv test file, hide for security reasons (Benjamin) </li>
+      <li> after_login.py for teacher login (both) </li>
+      <li> beautified login page through login.html (both) </li>
+      <li> fixed zooming in/out formatting problem (Albert) </li>
+      <li> secure passwords through encryption (both) </li>
+      <li> studentLogin.py module to handle student login (both) </li>
+      <li> math.csv and chemistry.csv test files (Albert) </li>
+      <li> student csv for each test (Albert) </li>
+      <li> dynamically add questionNumber in csv file (both) </li>
+      <li> dynamically add score in csv file (both) </li>
+      <li> ability to update the student csv file (both) </li>
+      <li> fixed bugs in administerTest.py (both) </li>
+      <li> logout option (Benjamin) </li>
+      <li> beautify administerTest.py (both) </li>
+      <li> handle test completion (both) </li>
+      <li> teacherLogin.py module to handle teacher login (both) </li>
+      <li> ability to reset scores (Benjamin) </li>
+      <li> change login.py again to fix another flaw in teacher design (both) </li>
+      <li> beautify and functionalize page at test completion (both) </li>
+      <li> added statistics to teacherStats.py (both) </li>
+      <li> add student option to take another test at congratulations page (both) </li>
+      <li> registerStudent.py to register students (both) </li>
+      <li> createTest.py to create form for new test (both) </li>
+      <li> testCreated.py to create new test (both) </li>
+      <li> added no-comma restriction (both) </li>
+    </ol> </p>
+
+<h1> Bugs </h1>
+<p> <ul>
+      <li> pressing the enter key in the login page always attempts the student login (to log in as teacher, click the appropriate button) </li>
+      <li> some features may produce errors if the user is using a browser earlier than Internet Explorer 9 (ex. the number input type isn't supported) </li>
+      <li> writing random query strings in the URL produces errors </li>
+      <li> in test creation, no input can be the same as the test name </li>
+      </ul> </p>
+
+<h2> Security flaws (self-added) </h2>
+<p> <ul>
+      <li> <a href="http://homer.stuy.edu/~benjamin.shen/project/tests/">test answers</a> are publicly available (encrypting answers would still produce patterns) </li>
+      <li> since others have read/write permission, <a href="http://homer.stuy.edu/~benjamin.shen/project/students/">student scores</a> are viewable and potentially changeable </li>
+      <li> a hacker can type ?name=<i>name</i> at the end of the after_login.py URL to automatically log in without a password </li>
+    </ul> </p>
+
+<br>
+<div align="center"> <p>
+Thanks for checking out the project! <a href="http://homer.stuy.edu/~benjamin.shen/project/documentation.html">top</a>
+</p> </div>
+
+</body>
+
+</html>

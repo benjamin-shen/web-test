@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    html
+    {
+        background: url(./backgrounds/after_login.jpg); <!-- same background as students test choice -->
+        background-size: 100%;
+        background-attachment: fixed;
+        font-family: tahoma;
+    }
+    a:link
+    {
+        color:black
+    }
+  </style>
+  <title> Test Stats </title>
+</head>
+<body>
+
+<p align="right">
+<b><a href="login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+</p>
+
+<form action="teacherStats.py" method="POST">
+<input type="hidden" name="testChoice" value="testChoice_value">
+<input type="hidden" name="name" value="name_placeholder">
+
+<table style="background-color:aqua;opacity:.8;padding:20px;" align="center" border="1">
+  <caption style="background-color:aqua;padding:10px">
+    <div style="color:red;"> red: incompleted test </div>
+    black: completed test
+  </caption>
+  <tr>
+    <th>
+      Student Name
+    </th>
+    <th>
+      Score
+    </th>
+    <th>
+      %
+    </th>
+    <th>
+      <input type="submit" value="Reset?">
+    </th>
+  </tr>
+table_placeholder
+</table>
+<br><br>
+
+<table style="background-color:aqua;opacity:.8;padding:20px;" align="center" border="1">
+  <caption style="background-color:aqua;padding:10px">
+    Statistics for Completed Tests
+  </caption>
+  <tr>
+    <th>
+      Mean
+    </th>
+    <td>
+      mean_placeholder
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Median
+    </th>
+    <td>
+      median_placeholder
+    </td>
+  </tr>
+    <tr>
+    <th>
+      Mode
+    </th>
+    <td>
+      mode_placeholder
+    </td>
+  </tr>
+    <tr>
+    <th>
+      Highest
+    </th>
+    <td>
+      max_placeholder
+    </td>
+  </tr>
+    <tr>
+    <th>
+      Lowest
+    </th>
+    <td>
+      min_placeholder
+    </td>
+  </tr>
+</table>
+
+</form>
+
+
+
+</body>
+</html>

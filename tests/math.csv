@@ -1,0 +1,11 @@
+number,question,a,b,c,d,correctAnswer
+1,20 + 3(5 - 1) = ,32,92,34,114,a
+2,2(3 + 5) - 9 = ,2,-7,7,-2,c
+3,100 - 50 / 5 * 10 = ,100,900,0,-400,c
+4,(24 - 6) / 2 = ,18,9,2,0,b
+5,2[ 13 - (1 + 6)] = ,36,12,19,40,b
+6,Solve for x: 2x - 10 = 5,7.5,7,8.5,8,a
+7,Solve for y: 4y - 3 = 3y + 4,1,7,-7,-1,b
+8,Solve for y: 3 - y = 2,1,-1,2,-2,a
+9,Factor the expression: 3x + 9,3x + 3,3(x + 3),x + 6,x + 3,b
+10,Simplify the expression: -(x - 5),5 - x,-5 + x,x - 5,x + 5,a

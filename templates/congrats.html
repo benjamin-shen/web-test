@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html
+    {
+        background: url(https://media.giphy.com/media/120ErahsQyf1q8/giphy.gif);
+        background-size: auto;
+        background-repeat: repeat;
+        font-family: tahoma;
+    }
+    h1,h2
+    {
+        text-align: center;
+        font-family: segoe script;
+        font-size: 40px;
+    }
+  </style>
+  <title> You finished! </title>
+</head>
+<body>
+
+<p align="right">
+<b><a href="login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+</p>
+
+<h1> Congratulations! </h1>
+<h2> You got <span style="color:lawngreen;"> score_placeholder </span> correct. </h2>
+
+<form action="after_login.py" method="POST">
+<input type="hidden" name="student">
+<input type="hidden" name="name" value="name_placeholder">
+<div align="center"><input type="submit" value="Take another test!"></div>
+</form>
+
+</body>
+</html>
