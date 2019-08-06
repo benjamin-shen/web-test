@@ -1,5 +1,5 @@
 # web-test
-Final Project for Intro CS with Mr. Holmes (Spring 2016)
+Final Project for Intro CS with Mr. Holmes (Spring 2016)  
 Collaborator: Albert Ryu
 
 This high school project was hosted on homer.stuy.edu (an Apache server) and thus some absolute links are broken. I'm archiving the project on Github for now because our accounts on homer are cleaned out.  
