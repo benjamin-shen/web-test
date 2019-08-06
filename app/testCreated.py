@@ -1,7 +1,7 @@
 #! /usr/bin/python
 import cgitb
 cgitb.enable()
-print 'content-type: text/html\n'
+print('content-type: text/html\n')
 
 # organize received data
 import cgi
@@ -27,27 +27,27 @@ def create(questionList):
         testContent += questionList[field+5].value + "\n"
         field += 6
     # write questions into test file
-    dest = open('./tests/'+name,'w',0)
+    dest = open('../tests/'+name,'w',0)
     dest.write(testContent[:len(testContent)-1])
     dest.close()
 
     studentContent = 'student,questionNumber,score\n'
     import csvToDict
-    studentDatabase = csvToDict.csvToDict('./data/accounts.csv')
+    studentDatabase = csvToDict.csvToDict('../data/accounts.csv')
     for student in studentDatabase:
         studentContent += student + ",1,0\n"
-    dest = open('./students/'+name,'w',0)
+    dest = open('../students/'+name,'w',0)
     dest.write(studentContent)
     dest.close()
 
 # read template
-source = open('./templates/after_login.html','rU') # need the same template
+source = open('../templates/after_login.html','rU') # need the same template
 html = source.read()
 source.close()
 body = """
 
 <p align="right">
-<b><a href="login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+<b><a href="../login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
 </p>
 """
 
@@ -64,4 +64,4 @@ else:
 
 # produce html
 html = html.replace("body_template",body)
-print html
+print(html)

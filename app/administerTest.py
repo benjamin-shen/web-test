@@ -1,12 +1,12 @@
 #! /usr/bin/python
 import cgitb
 cgitb.enable()
-print 'content-type: text/html\n'
+print('content-type: text/html\n')
 
 import testModule
 
 # read html template
-source = open('./templates/administerTest.html','rU')
+source = open('../templates/administerTest.html','rU')
 html = source.read()
 source.close()
 
@@ -19,7 +19,7 @@ testChoice = fromQS['testChoice'].value
 
 import csvToDict
 # create personalized dictionary
-allStudents = csvToDict.csvToDict("/home/students/2018/benjamin.shen/public_html/project/students/"+testChoice)
+allStudents = csvToDict.csvToDict("../students/"+testChoice)
 # print allStudents
 studentDict = allStudents[name]
 # print studentDict
@@ -27,7 +27,7 @@ questionNumber = int(studentDict['questionNumber'])
 # print questionNumber
 
 # get test details
-testCsv = csvToDict.csvToDict("./tests/"+testChoice)
+testCsv = csvToDict.csvToDict("../tests/"+testChoice)
 # print testCsv
 
 # for received answer
@@ -59,6 +59,6 @@ if questionNumber < len(testCsv)+1:
     html = html.replace("name_placeholder",name)
     html = html.replace("testChoice_placeholder",testChoice)
     # produce html
-    print html
+    print(html)
 else:
-    print testModule.handleCompletion(name,score,questionNumber-1)
+    print(testModule.handleCompletion(name,score,questionNumber-1))

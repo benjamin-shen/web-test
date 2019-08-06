@@ -1,7 +1,7 @@
 #! /usr/bin/python
 import cgitb
 cgitb.enable()
-print 'content-type: text/html\n'
+print('content-type: text/html\n')
 
 # interpret data
 import cgi
@@ -25,7 +25,7 @@ for name in fromQS:
             reset(fromQS[name].value)
 
 import csvToDict
-csvDict = csvToDict.csvToDict('./students/'+testChoice)
+csvDict = csvToDict.csvToDict('../students/'+testChoice)
 csvList = csvDict.keys()
 csvList.sort()
 # print csvList
@@ -44,7 +44,7 @@ def success(testChoice):
             return " - "
     def redify():
         # determine if end of test
-        testCsv = csvToDict.csvToDict("./tests/"+testChoice)
+        testCsv = csvToDict.csvToDict("../tests/"+testChoice)
         notEndOfTest = questionNumber < len(testCsv)
         if notEndOfTest:
             return ' style="color:red";'
@@ -86,7 +86,7 @@ scorePercents = []
 del csvDict[""]
 for name in csvDict:
     # from redify function above
-    totalNumberQ = len(csvToDict.csvToDict("./tests/"+testChoice))
+    totalNumberQ = len(csvToDict.csvToDict("../tests/"+testChoice))
     if int(csvDict[name]["questionNumber"])-1 == totalNumberQ: # if completed test
         scorePercents.append(int(int(csvDict[name]["score"])/float(totalNumberQ) *100))
 
@@ -102,4 +102,4 @@ html = html.replace("mode_placeholder", mode)
 html = html.replace("max_placeholder", maxValue)
 html = html.replace("min_placeholder", minValue)
 
-print html
+print(html)

@@ -1,7 +1,7 @@
 #! /usr/bin/python
 import cgitb
 cgitb.enable()
-print 'content-type: text/html\n'
+print('content-type: text/html\n')
 
 # interprets submitted data
 import cgi
@@ -18,17 +18,17 @@ for character in name:
     valid = valid and (ord('0')<=ascii<=ord('9') or ord('A')<=ascii<=ord('Z') or ord('a')<=ascii<=ord('z') or ascii==ord('-') or ascii==ord('_'))
 name += ".csv"
 import loginModule
-# print loginModule.testChoices()
+# print(loginModule.testChoices())
 if name in loginModule.testChoices():
     valid = False
 
 # read template
-source = open('./templates/after_login.html','rU') # need the same template
+source = open('../templates/after_login.html','rU') # need the same template
 html = source.read()
 source.close()
 body = """
 <p align="right">
-<b><a href="login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+<b><a href="../login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
 </p>
 """
 
@@ -42,13 +42,13 @@ def testForm(quantity):
     Choice B: <input type="text" name="''' + str(question) + '''B" required> <br>
     Choice C: <input type="text" name="''' + str(question) + '''C" required> <br>
     Choice D: <input type="text" name="''' + str(question) + '''D" required> <br>
-    Correct Answer: <select name="''' + str(question) + '''answer" size="1"> 
+    Correct Answer: <select name="''' + str(question) + '''answer" size="1">
         <option> a </option>
         <option> b </option>
         <option> c </option>
         <option> d </option>
       </select> <br> <br> \n'''
-    
+
         question += 1
     html += '<div align="center"><input type="submit" value="Create Test"></div></form></td></tr></table>'
     return html
@@ -65,4 +65,4 @@ else:
 # produce html
 body = body.replace("name_placeholder",name)
 html = html.replace("body_template",body)
-print html
+print(html)

@@ -1,7 +1,7 @@
 #! /usr/bin/python
 import cgitb
 cgitb.enable()
-print 'content-type: text/html\n'
+print('content-type: text/html\n')
 
 # read html template
 source = open("./templates/login.html",'rU')
@@ -33,4 +33,4 @@ loginPage = createOptions("./data/accounts.csv",'student_options',loginPage)
 loginPage = createOptions("./data/teachers.csv",'teacher_options',loginPage)
 
 # produce html
-print loginPage
+print(loginPage)

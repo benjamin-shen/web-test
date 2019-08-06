@@ -1,7 +1,7 @@
 #! /usr/bin/python
 import cgitb
 cgitb.enable()
-print 'content-type: text/html\n'
+print('content-type: text/html\n')
 
 # interprets submitted data
 import cgi
@@ -14,32 +14,32 @@ password = fromQS["registerPassword"].value
 # check validity of student name
 valid = not "," in student
 import csvToDict
-studentDatabase = csvToDict.csvToDict('./data/accounts.csv')
+studentDatabase = csvToDict.csvToDict('../data/accounts.csv')
 for name in studentDatabase:
     valid = valid and not name == student
 
 # adapted from 2016.05.25's Do Now
 def addAccount(username,password):
-    dest = open('./data/accounts.csv', 'a', 0)
+    dest = open('../data/accounts.csv', 'a', 0)
     newAccount = '\n' + username + ',' + password
     dest.write(newAccount)
     dest.close()
 
     import loginModule
     for testChoice in loginModule.testChoices():
-        dest = open('./students/'+testChoice, 'a', 0)
+        dest = open('../students/'+testChoice, 'a', 0)
         newAccount = username + ',1,0\n'
         dest.write(newAccount)
         dest.close()
 
 # read template
-source = open('./templates/after_login.html','rU') # need the same template
+source = open('../templates/after_login.html','rU') # need the same template
 html = source.read()
 source.close()
 body = """
 
 <p align="right">
-<b><a href="login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+<b><a href="../login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
 </p>
 """
 
@@ -56,4 +56,4 @@ body = body.replace("student_placeholder",student)
 
 # produce html
 html = html.replace("body_template",body)
-print html
+print(html)
