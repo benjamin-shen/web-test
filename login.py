@@ -33,4 +33,5 @@ loginPage = createOptions("./data/accounts.csv",'student_options',loginPage)
 loginPage = createOptions("./data/teachers.csv",'teacher_options',loginPage)
 
 # produce html
-print(loginPage)
+#print(loginPage)
+return loginPage
