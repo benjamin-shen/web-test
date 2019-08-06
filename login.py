@@ -34,4 +34,5 @@ loginPage = createOptions("./data/teachers.csv",'teacher_options',loginPage)
 
 # produce html
 #print(loginPage)
-return loginPage
+def result():
+    return loginPage
