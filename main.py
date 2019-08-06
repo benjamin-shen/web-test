@@ -14,7 +14,7 @@ def login():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def get_dir(path):
-    return path
+    return "not implemented"
 
 if __name__ == '__main__':
    app.run(debug = True)

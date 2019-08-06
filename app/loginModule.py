@@ -1,3 +1,5 @@
+# this module is broken
+
 # module to handle student logins
 
 def testChoices():
