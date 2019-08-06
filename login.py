@@ -29,8 +29,8 @@ def createOptions(filename,placeholder,webpage):
     webpage = webpage.replace(placeholder,options_placeholder)
     return webpage
 
-loginPage = createOptions("/home/students/2018/benjamin.shen/accounts.csv",'student_options',loginPage)
-loginPage = createOptions("/home/students/2018/benjamin.shen/teachers.csv",'teacher_options',loginPage)
+loginPage = createOptions("./data/accounts.csv",'student_options',loginPage)
+loginPage = createOptions("./data/teachers.csv",'teacher_options',loginPage)
 
 # produce html
 print loginPage

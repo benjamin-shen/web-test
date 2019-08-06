@@ -27,14 +27,14 @@ questionNumber = int(studentDict['questionNumber'])
 # print questionNumber
 
 # get test details
-testCsv = csvToDict.csvToDict("/home/students/2018/benjamin.shen/public_html/project/tests/"+testChoice)
+testCsv = csvToDict.csvToDict("./tests/"+testChoice)
 # print testCsv
 
 # for received answer
 score = int(studentDict['score'])
 continuation = "answer" in fromQS # if continuation of the recursive program, could've tested for any hidden input sent later
 if continuation and questionNumber < len(testCsv)+1:
-    lastQuestion = fromQS['lastQuestion'].value    
+    lastQuestion = fromQS['lastQuestion'].value
     # see if question is new
     if lastQuestion == testCsv[str(questionNumber)]['question']:
         # validate answer

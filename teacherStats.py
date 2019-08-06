@@ -25,11 +25,11 @@ for name in fromQS:
             reset(fromQS[name].value)
 
 import csvToDict
-csvDict = csvToDict.csvToDict('/home/students/2018/benjamin.shen/public_html/project/students/'+testChoice)
+csvDict = csvToDict.csvToDict('./students/'+testChoice)
 csvList = csvDict.keys()
 csvList.sort()
 # print csvList
-    
+
 # successful teacher login
 def success(testChoice):
     def fraction(name):
@@ -40,16 +40,16 @@ def success(testChoice):
     def percent(name):
         if questionNumber != 0: # for users that didn't take the test
             return str(int(int(csvDict[name]["score"])/float(questionNumber) *100))
-        else: 
+        else:
             return " - "
     def redify():
         # determine if end of test
-        testCsv = csvToDict.csvToDict("/home/students/2018/benjamin.shen/public_html/project/tests/"+testChoice)
+        testCsv = csvToDict.csvToDict("./tests/"+testChoice)
         notEndOfTest = questionNumber < len(testCsv)
         if notEndOfTest:
             return ' style="color:red";'
         return ""
-        
+
     # create table
     table = ""
     for name in csvList[1:]: # to splice out empty string
@@ -68,7 +68,7 @@ def success(testChoice):
       <input type="checkbox" name="reset" value="''' + name + '''">
     </td>
   </tr>\n'''
-    
+
     # produce html
     return table
 
@@ -86,7 +86,7 @@ scorePercents = []
 del csvDict[""]
 for name in csvDict:
     # from redify function above
-    totalNumberQ = len(csvToDict.csvToDict("/home/students/2018/benjamin.shen/public_html/project/tests/"+testChoice))
+    totalNumberQ = len(csvToDict.csvToDict("./tests/"+testChoice))
     if int(csvDict[name]["questionNumber"])-1 == totalNumberQ: # if completed test
         scorePercents.append(int(int(csvDict[name]["score"])/float(totalNumberQ) *100))
 

@@ -25,18 +25,18 @@ def create(questionList):
         testContent += questionList[field+3].value + ","
         testContent += questionList[field+4].value + ","
         testContent += questionList[field+5].value + "\n"
-        field += 6    
+        field += 6
     # write questions into test file
-    dest = open('/home/students/2018/benjamin.shen/public_html/project/tests/'+name,'w',0)
+    dest = open('./tests/'+name,'w',0)
     dest.write(testContent[:len(testContent)-1])
     dest.close()
-    
+
     studentContent = 'student,questionNumber,score\n'
     import csvToDict
-    studentDatabase = csvToDict.csvToDict('/home/students/2018/benjamin.shen/accounts.csv')
+    studentDatabase = csvToDict.csvToDict('./data/accounts.csv')
     for student in studentDatabase:
         studentContent += student + ",1,0\n"
-    dest = open('/home/students/2018/benjamin.shen/public_html/project/students/'+name,'w',0)
+    dest = open('./students/'+name,'w',0)
     dest.write(studentContent)
     dest.close()
 
@@ -61,7 +61,7 @@ if not "," in questionString:
 else:
     body += '<div align="center"><h1> There is a comma in your input; <br> press the back key </h1></div>'
     html = html.replace("title_placeholder","Invalid Input")
-    
+
 # produce html
 html = html.replace("body_template",body)
 print html

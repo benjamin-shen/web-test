@@ -15,7 +15,7 @@ import csvToDict
 import hashlib
 
 if "student" in fromQS: # if student logs in
-    accounts = csvToDict.csvToDict('/home/students/2018/benjamin.shen/accounts.csv')
+    accounts = csvToDict.csvToDict('./data/accounts.csv')
     # adapted from hw54 (login page)
     name = fromQS['studentName'].value
     try:
@@ -29,11 +29,11 @@ if "student" in fromQS: # if student logs in
     except:
         title = "Missing Password"
 elif "name" in fromQS: # if student finishes a test and wants to take another one
-    accounts = csvToDict.csvToDict('/home/students/2018/benjamin.shen/accounts.csv')
+    accounts = csvToDict.csvToDict('./data/accounts.csv')
     name = fromQS['name'].value
     title = "Welcome student!"
 else: # if "teacher" in fromQS, if teacher logs in
-    accounts = csvToDict.csvToDict('/home/students/2018/benjamin.shen/teachers.csv')
+    accounts = csvToDict.csvToDict('./data/teachers.csv')
     name = fromQS['teacherName'].value
     try:
         password = fromQS['teacherPassword'].value
@@ -45,7 +45,7 @@ else: # if "teacher" in fromQS, if teacher logs in
             title = "Invalid Password"
     except:
         title = "Missing Password"
-    
+
 
 # read html template
 source = open("./templates/after_login.html",'rU')
@@ -90,6 +90,6 @@ else: # if successful login
             inputs += '\n<h1> Please create the test form. </h1>\n' + loginModule.testGeneralInfo()
         # add more options
         html = html.replace("inputs_placeholder",inputs)
-        
+
 # produce html
 print html

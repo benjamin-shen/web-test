@@ -2,7 +2,7 @@
 
 def testChoices():
     import urllib
-    html =  urllib.urlopen("http://homer.stuy.edu/~benjamin.shen/project/tests").read() # html code for tests directory
+    html =  urllib.urlopen("/tests").read() # html code for tests directory
     # print html
     # isolate dynamic part of webpage
     lenStart = 1 + len("""<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
@@ -22,7 +22,7 @@ def testChoices():
 <address>Apache/2.4.7 (Ubuntu) Server at homer.stuy.edu Port 80</address>
 </body></html>""") - 1
     html = html[lenStart:lenEnd]
-    
+
     # split by row
     csvList = html.split("<tr>")[1:] # spliced to get rid of empty string (element 0)
     # print len(csvList)
@@ -38,7 +38,7 @@ def testChoices():
         rowNumber += 1
         # print "done"
     # print testList
-    
+
     return testList
 
 def htmlChoices(testList):
@@ -48,15 +48,15 @@ def htmlChoices(testList):
         inputs += '<input type="radio" name="testChoice" value="' + file + '" required> ' + name + ' <br><br>\n'
     inputs += '<br> <input type="submit" value="Choose test">\n<tr><td> </table>'
     return inputs
-    
-def formNamePassword():    
+
+def formNamePassword():
     inputs = '''<table align="center"><tr><td>
 Student name: <input type="text" name="registerName" required> <br><br>
 Student password: <input type="password" name="registerPassword" required> <br><br>
 <div style="text-align:center"><input type="submit" value="Register"></div>
 </table>'''
     return inputs
-    
+
 def testGeneralInfo():
     inputs = '''<table align="center"><tr><td align="center">
 Test name: <b>(a-z,A-Z,0-9,-,_)</b> <br>
