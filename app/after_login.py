@@ -4,10 +4,10 @@ cgitb.enable()
 print('content-type: text/html\n')
 
 # interprets submitted data
-import cgi
-fromQS = cgi.FieldStorage()
-# for name in fromQS:
-#     print name, fromQS[name]
+# import cgi
+# fromQS = cgi.FieldStorage(environ="post")
+from flask import request
+fromQS = request.form
 
 # reads and converts csv file into dictionary
 import csvToDict
@@ -15,11 +15,11 @@ import csvToDict
 import hashlib
 
 if "student" in fromQS: # if student logs in
-    accounts = csvToDict.csvToDict('../data/accounts.csv')
+    accounts = csvToDict.csvToDict('static/data/accounts.csv')
     # adapted from hw54 (login page)
-    name = fromQS['studentName'].value
+    name = fromQS['studentName']
     try:
-        password = fromQS['studentPassword'].value
+        password = fromQS['studentPassword']
         encrypted = hashlib.sha256(password).hexdigest()
         success = accounts[name]['password'] == encrypted
         if success:
@@ -29,14 +29,13 @@ if "student" in fromQS: # if student logs in
     except:
         title = "Missing Password"
 elif "name" in fromQS: # if student finishes a test and wants to take another one
-    accounts = csvToDict.csvToDict('../data/accounts.csv')
-    name = fromQS['name'].value
+    accounts = csvToDict.csvToDict('static/data/accounts.csv')
+    name = fromQS['name']
     title = "Welcome student!"
 else: # if "teacher" in fromQS, if teacher logs in
-    accounts = csvToDict.csvToDict('../data/teachers.csv')
-    name = fromQS['teacherName'].value
+    accounts = csvToDict.csvToDict('static/data/teachers.csv')
     try:
-        password = fromQS['teacherPassword'].value
+        password = fromQS['action']
         encrypted = hashlib.sha256(password).hexdigest()
         success = accounts[name]['password'] == encrypted
         if success:
@@ -48,7 +47,7 @@ else: # if "teacher" in fromQS, if teacher logs in
 
 
 # read html template
-source = open("../templates/after_login.html",'rU')
+source = open("templates/after_login.html",'rU')
 template = source.read()
 source.close()
 html = template.replace("title_placeholder",title)
@@ -56,15 +55,15 @@ html = template.replace("title_placeholder",title)
 # update html
 
 if title == "Invalid Password":
-    body = '<h2> Wrong password. Please try again. </h2> <a href="login.py"> Retry </a>'
+    body = '<h2> Wrong password. Please try again. </h2> <a href="login"> Retry </a>'
     html = html.replace("body_template", body)
 elif title == "Missing Password":
-    body = '<h2> Please enter a password. </h2> <a href="login.py"> Retry </a>'
+    body = '<h2> Please enter a password. </h2> <a href="login"> Retry </a>'
     html = html.replace("body_template", body)
 else: # if successful login
     import loginModule
     if title == "Welcome student!":
-        source = open("../templates/studentLogin.html",'rU')
+        source = open("templates/studentLogin.html",'rU')
         body = source.read()
         source.close()
         html = html.replace("body_template",body)
@@ -72,7 +71,7 @@ else: # if successful login
         inputs = '<h1> Please select a test. </h1>' + loginModule.htmlChoices(loginModule.testChoices())
         html = html.replace("inputs_placeholder",inputs)
     else: # if title == "Welcome teacher!"
-        source = open("../templates/teacherLogin.html",'rU')
+        source = open("templates/teacherLogin.html",'rU')
         body = source.read()
         source.close()
         html = html.replace("body_template",body)
@@ -92,4 +91,7 @@ else: # if successful login
         html = html.replace("inputs_placeholder",inputs)
 
 # produce html
-print(html)
+# print(html)
+
+def result():
+    return html
