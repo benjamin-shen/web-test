@@ -9,7 +9,7 @@ print('content-type: text/html\n')
 from flask import request
 
 # reads and converts csv file into dictionary
-import csvToDict
+from app import csvToDict
 # for passwords
 import hashlib
 

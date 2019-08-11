@@ -3,8 +3,8 @@ import cgitb
 cgitb.enable()
 print('content-type: text/html\n')
 
-import testModule
-import csvToDict
+from app import testModule
+from app import csvToDict
 
 # interprets hidden submitted data
 # import cgi
