@@ -10,8 +10,6 @@ from flask import request
 
 # reads and converts csv file into dictionary
 from app import csvToDict
-# for passwords
-import hashlib
 
 def result():
     fromQS = request.form
@@ -21,8 +19,7 @@ def result():
         name = fromQS['studentName']
         try:
             password = fromQS['studentPassword']
-            encrypted = hashlib.sha256(password).hexdigest()
-            success = accounts[name]['password'] == encrypted
+            success = accounts[name]['password'] == password
             if success:
                 title = "Welcome student!"
             elif password == "":
@@ -40,8 +37,7 @@ def result():
         action = fromQS['teacherAction']
         try:
             password = fromQS['teacherPassword']
-            encrypted = hashlib.sha256(password).hexdigest()
-            success = accounts[action]['password'] == encrypted
+            success = accounts[action]['password'] == password
             if success:
                 title = "Welcome teacher!"
             elif password == "":
