@@ -11,6 +11,9 @@ from flask import request
 # reads and converts csv file into dictionary
 from app import csvToDict
 
+# for successful login
+from app import loginModule
+
 def result():
     fromQS = request.form
     if "student" in fromQS and fromQS['student'] != "": # if student logs in
@@ -66,7 +69,6 @@ def result():
         body = '<h2> Error. Please try again. </h2> <a href="login"> Retry </a>'
         html = html.replace("body_template", body)
     else: # if successful login
-        import loginModule
         if title == "Welcome student!":
             source = open("templates/studentLogin.html",'rU')
             body = source.read()
