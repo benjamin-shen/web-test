@@ -23,18 +23,18 @@ if name in loginModule.testChoices():
     valid = False
 
 # read template
-source = open('../templates/after_login.html','rU') # need the same template
+source = open('templates/after_login.html','rU') # need the same template
 html = source.read()
 source.close()
 body = """
 <p align="right">
-<b><a href="../login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+<b><a href="login" style="text-decorations:none; color:inherit;">Log out</a></b>
 </p>
 """
 
 def testForm(quantity):
     question = 1
-    html = '<table align="center"><tr><td>\n<form action="testCreated.py" method="POST">\n<input type="hidden" name="name" value="name_placeholder">'
+    html = '<table align="center"><tr><td>\n<form action="testCreated" method="POST">\n<input type="hidden" name="name" value="name_placeholder">'
     while question <= quantity:
         html += '''
     Question ''' + str(question) + ''': <input type="text" name="''' + str(question) + '''" required> <br>

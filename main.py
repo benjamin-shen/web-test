@@ -16,10 +16,15 @@ def login():
     from app import login
     return login.result()
 
-@app.route('/validation', methods=['GET','POST'])
+@app.route('/validation', methods=['POST'])
 def after_login():
     from app import after_login
     return after_login.result()
+
+@app.route('/test', methods=['POST'])
+def administerTest():
+    from app import administerTest
+    return administerTest.result()
 
 if __name__ == '__main__':
    app.run(debug = True)

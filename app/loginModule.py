@@ -1,7 +1,10 @@
-# this module is broken
-
 # module to handle student logins
 
+import os
+def testChoices():
+    csvList = os.listdir("static/tests")
+    return csvList
+'''
 def testChoices():
     import urllib
     html =  urllib.urlopen("static/tests").read() # html code for tests directory
@@ -42,6 +45,7 @@ def testChoices():
     # print testList
 
     return testList
+'''
 
 def htmlChoices(testList):
     inputs = '<table align="center"> <tr><td>\n'

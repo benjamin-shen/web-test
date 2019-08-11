@@ -27,7 +27,7 @@ def create(questionList):
         testContent += questionList[field+5].value + "\n"
         field += 6
     # write questions into test file
-    dest = open('../tests/'+name,'w',0)
+    dest = open('static/tests/'+name,'w',0)
     dest.write(testContent[:len(testContent)-1])
     dest.close()
 
@@ -47,7 +47,7 @@ source.close()
 body = """
 
 <p align="right">
-<b><a href="../login.py" style="text-decorations:none; color:inherit;">Log out</a></b>
+<b><a href="login" style="text-decorations:none; color:inherit;">Log out</a></b>
 </p>
 """
 

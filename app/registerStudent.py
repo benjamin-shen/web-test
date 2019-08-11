@@ -14,20 +14,20 @@ password = fromQS["registerPassword"].value
 # check validity of student name
 valid = not "," in student
 import csvToDict
-studentDatabase = csvToDict.csvToDict('../data/accounts.csv')
+studentDatabase = csvToDict.csvToDict('static/data/accounts.csv')
 for name in studentDatabase:
     valid = valid and not name == student
 
 # adapted from 2016.05.25's Do Now
 def addAccount(username,password):
-    dest = open('../data/accounts.csv', 'a', 0)
+    dest = open('static/data/accounts.csv', 'a', 0)
     newAccount = '\n' + username + ',' + password
     dest.write(newAccount)
     dest.close()
 
     import loginModule
     for testChoice in loginModule.testChoices():
-        dest = open('../students/'+testChoice, 'a', 0)
+        dest = open('static/students/'+testChoice, 'a', 0)
         newAccount = username + ',1,0\n'
         dest.write(newAccount)
         dest.close()

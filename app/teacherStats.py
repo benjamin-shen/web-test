@@ -25,7 +25,7 @@ for name in fromQS:
             reset(fromQS[name].value)
 
 import csvToDict
-csvDict = csvToDict.csvToDict('../students/'+testChoice)
+csvDict = csvToDict.csvToDict('static/students/'+testChoice)
 csvList = csvDict.keys()
 csvList.sort()
 # print csvList
@@ -73,7 +73,7 @@ def success(testChoice):
     return table
 
 # read template
-source = open("./templates/teacherStats.html",'rU')
+source = open("templates/teacherStats.html",'rU')
 template = source.read()
 source.close()
 
