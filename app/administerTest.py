@@ -53,7 +53,6 @@ def result():
         # get question details
         questionDetails = testCsv[str(questionNumber)]
         # update html
-        global html
         html = html.replace("question_placeholder",questionDetails['question'])
         html = html.replace("a_placeholder",questionDetails['a'])
         html = html.replace("b_placeholder",questionDetails['b'])
