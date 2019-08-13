@@ -1,7 +1,7 @@
 #! /usr/bin/python
-import cgitb
-cgitb.enable()
-print('content-type: text/html\n')
+# import cgitb
+# cgitb.enable()
+# print('content-type: text/html\n')
 
 # interprets submitted data
 # import cgi
@@ -17,7 +17,7 @@ from app import loginModule
 def result():
     fromQS = request.form
     if "student" in fromQS and fromQS['student'] != "": # if student logs in
-        accounts = csvToDict.csvToDict('static/data/accounts.csv')
+        accounts = csvToDict.csvToDict('client/data/accounts.csv')
         # adapted from hw54 (login page)
         name = fromQS['studentName']
         try:
@@ -32,11 +32,11 @@ def result():
         except:
             title = "Error"
     elif "name" in fromQS and fromQS['name'] != "": # if student finishes a test and wants to take another one
-        accounts = csvToDict.csvToDict('static/data/accounts.csv')
+        accounts = csvToDict.csvToDict('client/data/accounts.csv')
         name = fromQS['name']
         title = "Welcome student!"
     else: # if "teacher" in fromQS, if teacher logs in
-        accounts = csvToDict.csvToDict('static/data/teachers.csv')
+        accounts = csvToDict.csvToDict('client/data/teachers.csv')
         action = fromQS['teacherAction']
         try:
             password = fromQS['teacherPassword']

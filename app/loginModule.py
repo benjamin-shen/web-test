@@ -2,12 +2,12 @@
 
 import os
 def testChoices():
-    csvList = os.listdir("static/tests")
+    csvList = os.listdir("client/tests")
     return csvList
 '''
 def testChoices():
     import urllib
-    html =  urllib.urlopen("static/tests").read() # html code for tests directory
+    html =  urllib.urlopen("client/tests").read() # html code for tests directory
     # print html
     # isolate dynamic part of webpage
     lenStart = 1 + len("""<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">

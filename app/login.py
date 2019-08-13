@@ -1,7 +1,7 @@
 #! /usr/bin/python
-import cgitb
-cgitb.enable()
-print('content-type: text/html\n')
+# import cgitb
+# cgitb.enable()
+# print('content-type: text/html\n')
 
 # write html for options in select tag from csv file
 def createOptions(filename,placeholder,webpage):
@@ -33,7 +33,7 @@ def result():
     # assign to loginPage
     loginPage = template
     # print(loginPage)
-    
-    loginPage = createOptions("static/data/accounts.csv",'student_options',loginPage)
-    loginPage = createOptions("static/data/teachers.csv",'teacher_options',loginPage)
+
+    loginPage = createOptions("client/data/accounts.csv",'student_options',loginPage)
+    loginPage = createOptions("client/data/teachers.csv",'teacher_options',loginPage)
     return loginPage

@@ -26,5 +26,25 @@ def administerTest():
     from app import administerTest
     return administerTest.result()
 
+@app.route('/createTest', methods=['POST'])
+def createTest():
+    from app import createTest
+    return createTest.result()
+
+@app.route('/testCreated', methods=['POST'])
+def testCreated():
+    from app import testCreated
+    return testCreated.result()
+
+@app.route('/registerStudent', methods=['POST'])
+def registerStudent():
+    from app import registerStudent
+    return registerStudent.result()
+
+@app.route('/teacherStats', methods=['POST'])
+def teacherStats():
+    from app import teacherStats
+    return teacherStats.result()
+
 if __name__ == '__main__':
    app.run(debug = True)

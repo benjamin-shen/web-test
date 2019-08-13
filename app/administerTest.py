@@ -1,7 +1,7 @@
 #! /usr/bin/python
-import cgitb
-cgitb.enable()
-print('content-type: text/html\n')
+# import cgitb
+# cgitb.enable()
+# print('content-type: text/html\n')
 
 from app import testModule
 from app import csvToDict
@@ -23,7 +23,7 @@ def result():
     testChoice = fromQS['testChoice']
 
     # create personalized dictionary
-    allStudents = csvToDict.csvToDict("static/students/"+testChoice)
+    allStudents = csvToDict.csvToDict("client/students/"+testChoice)
     # print allStudents
     studentDict = allStudents[name]
     # print studentDict
@@ -31,7 +31,7 @@ def result():
     # print questionNumber
 
     # get test details
-    testCsv = csvToDict.csvToDict("static/tests/"+testChoice)
+    testCsv = csvToDict.csvToDict("client/tests/"+testChoice)
     # print testCsv
 
     # for received answer
