@@ -21,7 +21,7 @@ def result():
         ascii = ord(character)
         valid = valid and (ord('0')<=ascii<=ord('9') or ord('A')<=ascii<=ord('Z') or ord('a')<=ascii<=ord('z') or ascii==ord('-') or ascii==ord('_'))
     name += ".csv"
-    import loginModule
+    from app import loginModule
     # print(loginModule.testChoices())
     if name in loginModule.testChoices():
         valid = False

@@ -15,7 +15,7 @@ def addAccount(username,password):
     dest.write(newAccount)
     dest.close()
 
-    import loginModule
+    from app import loginModule
     for testChoice in loginModule.testChoices():
         dest = open('client/students/'+testChoice, 'a', 0)
         newAccount = username + ',1,0\n'
@@ -31,7 +31,7 @@ def result():
 
     # check validity of student name
     valid = not "," in student
-    import csvToDict
+    from app import csvToDict
     studentDatabase = csvToDict.csvToDict('client/data/accounts.csv')
     for name in studentDatabase:
         valid = valid and not name == student

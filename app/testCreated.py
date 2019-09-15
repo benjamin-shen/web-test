@@ -36,7 +36,7 @@ def result():
         dest.close()
 
         studentContent = 'student,questionNumber,score\n'
-        import csvToDict
+        from app import csvToDict
         studentDatabase = csvToDict.csvToDict('client/data/accounts.csv')
         for student in studentDatabase:
             studentContent += student + ",1,0\n"
