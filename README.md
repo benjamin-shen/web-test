@@ -1,10 +1,8 @@
 # web-test
 Final Project for Intro CS with Mr. Holmes (Spring 2016)  
-Collaborator: Albert Ryu
+Collaborator: Albert Ryu  
+Grade: 100
 
-This high school project was hosted on homer.stuy.edu (an Apache server) and thus some absolute links are broken. I'm archiving the project ([commit #1](https://github.com/benjamin-shen/web-test/tree/1b2b027d77804e18af35e52b751ecd2995d631b5) on Github) because our accounts on homer are cleaned out.  
-See the documentation for project details. We got 100! Thanks Albert.  
+Our original project is archived on Github ([commit #1](https://github.com/benjamin-shen/web-test/tree/1b2b027d77804e18af35e52b751ecd2995d631b5)). This high school project was hosted on homer.stuy.edu and our accounts on homer are now cleaned out. Thus, the archived version has many links that break and is almost entirely obsolete.  
 
-Feel free to use the code as a reference for your own projects. In hindsight Python probably wasn't the best language to use for what we wanted to accomplish.  
-
-Currently migrating it to heroku. [It doesn't support CGI scripts](https://stackoverflow.com/questions/13520175/run-python-cgi-application-on-heroku) so I'm changing some of the code.
+The most recent version is migrated to heroku. I cleaned up and altered a lot of the code so that it works correctly.
