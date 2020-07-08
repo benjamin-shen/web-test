@@ -31,7 +31,7 @@ def result():
 
     csvDict = csvToDict.csvToDict('client/students/'+testChoice)
     csvList = csvDict.keys()
-    csvList.sort()
+    csvList = sorted(csvList)
     # print csvList
 
     # successful teacher login

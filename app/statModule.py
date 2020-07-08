@@ -21,7 +21,7 @@ def median(list):
         c = [list[x], list[y]]
         return mean(c)
     else:
-        a = len(list) / 2 # floor
+        a = int(len(list) / 2) # floor
         return list[a]
         
 # print median([1,2])
